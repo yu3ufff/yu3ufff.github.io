@@ -14301,7 +14301,7 @@ stroke : 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There a lot of interesting takeaways we can get from these plots but I will focus on the one I found most interesting which is work_type. Here are the statistics: roughly 8% of self-employed workers had a stroke, followed by 5% of private workers, then 4% of government workers. Although I am not a health expert, what I got from this is that stress plays a role in whether a person had a stroke or not. Typically self-employed workers have a lot of responsibilities and consequently more stress while government jobs in general are less demanding then jobs in private companies. Of course this is just speculation but it was interesting to find these percentages.</p>
+<p>There are a lot of interesting takeaways we can get from these plots but I will focus on the one I found most interesting which is work_type. Here are the statistics: roughly 8% of self-employed workers had a stroke, followed by 5% of private workers, then 4% of government workers. Although I am not a health expert, what I got from this is that stress plays a role in whether a person had a stroke or not. Typically self-employed workers have a lot of responsibilities and consequently more stress while government jobs in general are less demanding than jobs in private companies. Of course this is just speculation but it was interesting to find these percentages.</p>
 
 </div>
 </div>
@@ -14316,7 +14316,7 @@ stroke : 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use hypothesis testing to calculate the p-values of our numerical features to test whether they are significant or not, meaning do they have a significant impact on the output or not. We will be using a logistic model since we are using continuous data the predict a classification (1/0).</p>
+<p>We will use hypothesis testing to calculate the p-values of our numerical features to test whether they are significant or not, meaning if they have a significant impact on the output or not. We will be using a logistic model since we are using continuous data the predict a classification (1/0).</p>
 
 </div>
 </div>
@@ -14449,7 +14449,7 @@ Name: P&gt;|z|, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At a 0.01 significance level, not all the parameters in the model are significantly different from 0. The p-values of the coefficients of avg_glucose_level is greater than 0.005 which means that it is not significantly different from 0. We compare the values to 0.005 since we are conducting a two-tailed test, meaning we compare with alpha/2 on both ends of the distribution. I chose a 0.01 significance level because we have a lot of data and wanted to be very confident (99% confidence level) when conducting the significance tests of our model's parameters. The age and bmi however are statistically significant in our logistic model. We guessed age would be significant but it was interesting to see the results of the other two features.</p>
+<p>At a 0.01 significance level, not all the parameters in the model are significantly different from 0. The p-value of the coefficient of avg_glucose_level is greater than 0.005 which means that it is not significant. We compare the values to 0.005 since we are conducting a two-tailed test, meaning we compare with alpha/2 on both ends of the distribution. I chose a 0.01 significance level because we have a lot of data and wanted to be very confident (99% confidence level) when conducting the significance tests of our model's parameters. The age and bmi, however, are statistically significant in our logistic model. We guessed age would be significant but it was interesting to see the results of the other two features.</p>
 
 </div>
 </div>
@@ -14464,7 +14464,7 @@ Name: P&gt;|z|, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we have reached the last step. Machine learning is the process of building systems which learn by us feeding it lots of data. Generally, the more data we give it the better. Our first step is to change the categorical features into numerical ones so we can feed it into the model. We will use one-hot encoding which places a 1 for the category it is and a 0 everywhere else. However, we have to avoid falling into the <em>dummy variable trap</em> and delete one of the columns in each category since the machine will take the combination of all 0's as an extra category. This creates <em>multicollinearity</em> which basically means two features are too strongly correlated which has a negative effect on the model. To avoid this, we can just drop the first category in each feature and have the machine represent that category with all 0's.</p>
+<p>Now we have reached the last step. Machine learning is the process of building systems which learn by us feeding it lots of data. Generally, the more data we give it the better. Our first step is to change the categorical features into numerical ones so we can feed it into the model. We will use one-hot encoding which places a 1 for the category in the feature each instance falls under and a 0 everywhere else. However, we have to avoid falling into the <em>dummy variable trap</em> and delete one of the columns in each category since the machine will take the combination of all 0's as an extra category. This creates <em>multicollinearity</em> which basically means two features are too strongly correlated which has a negative effect on the model. To avoid this, we can just drop the first category in each feature and have the machine represent that category with all 0's.</p>
 
 </div>
 </div>
@@ -14645,7 +14645,7 @@ Name: P&gt;|z|, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Our next step is to create training and testing sets. We feed the training set to our model to learn from it and test its accuracy on the test set. If we use all our data to train the model, we won't have any data to test our model with! A good size for test set is 20% of our total data, leaving 80% for the model to learn from.</p>
+<p>Our next step is to create train and test sets. We feed the train set to our model to learn from it and test its accuracy on the test set. If we use all our data to train the model, we won't have any data to test our model with! A good size for test set is 20% of our total data, leaving 80% for the model to learn from.</p>
 
 </div>
 </div>
@@ -15546,8 +15546,16 @@ Name: P&gt;|z|, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>We got a 99.9% accuracy! This is good because we avoided <em>overfitting</em> again.</li>
+<li>We got a 99.9% accuracy! This is good because we again avoided <em>overfitting</em>.</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's get the new residuals for the whole dataset and create a countplot for it.</p>
 
 </div>
 </div>
@@ -15588,14 +15596,6 @@ Name: P&gt;|z|, dtype: float64</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's get the residuals, meaning the errors between the dataset and predictions, of the whole dataset and create a countplot for it.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
